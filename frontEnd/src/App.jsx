@@ -1,29 +1,27 @@
-import React, {useState} from "react"
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css"
-import { BrowserRouter as Router, Route, Routes, useNavigate } from "react-router-dom";
-import Auth from "./Auth.jsx";
-import Inventory from "./components/Inventory.jsx";
+import Inventory from "../../backEnd/models/inventory";
 
-function NavigationButtons() {
-  return (
-    <div>
-      <button onClick={() => navigate("/inventory")}>Inventory</button>
-    </div>
-  )
-}
 
 function App() {
-  const [count, setCount] = useState(0)
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Root />,
+      children: [
+        {
+          path: "inventory",
+          element: <Inventory />,
+        },
+        {
 
+        }
+      ]
+    }
+  ]);
   return (
-    <Routes>
-       <NavigationButtons />
-      <Router>
-
-      </Router>
-        
-    </Routes>
-  )
+    <RouterProvider router={router}></RouterProvider>
+  );
 }
 
 export default App
