@@ -9,7 +9,6 @@ const app = express();
 app.use(express.json());
 
 //Routers
-app.use(testRoute);
 app.use(inventoryRoute);
 
 app.listen(process.env.PORT, () => {
