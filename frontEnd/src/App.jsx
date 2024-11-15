@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css"
-import Inventory from "../../backEnd/models/inventory";
+import Inventory from "./components/Inventory";
 
 
 function App() {
