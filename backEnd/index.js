@@ -1,12 +1,14 @@
 import "dotenv/config";
 import express from "express";
 import mongoose from "mongoose";
-import testRoute from "./routes/testRoute.js"
-import inventoryRoute from "./routes/inventoryRoute.js"
+// import testRoute from "./routes/testRoute.js"
+import inventoryRoute from "./routes/inventoryRoute.js";
+import cors from "cors";
 
 //Express boiler plate
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 //Routers
 app.use(inventoryRoute);

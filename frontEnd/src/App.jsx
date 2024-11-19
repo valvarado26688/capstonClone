@@ -1,20 +1,18 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css"
-import Inventory from "./components/Inventory";
+import Root from "./routes/root.jsx";
+import Inventory from "./components/Inventory.jsx";
 
-
+//good routing
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Root />,
+      element: <Root></Root>, 
       children: [
         {
           path: "inventory",
-          element: <Inventory />,
-        },
-        {
-
+          element: <Inventory></Inventory>
         }
       ]
     }
